@@ -1,0 +1,178 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import ButtonLink from "../components/ButtonLink.astro";
+import { getCollection } from "astro:content";
+let recent_projects = await getCollection("project");
+recent_projects = recent_projects
+  .sort((a, b) => {
+    return (
+      new Date(b.data.timestamp).getTime() -
+      new Date(a.data.timestamp).getTime()
+    );
+  })
+  .slice(0, 5);
+---
+
+<Layout title="Shubham Verma">
+  <div
+    class="flex p-4 mb-4 text-sm text-blue-800 border border-terminal-green rounded-lg bg-gray-900"
+    role="alert"
+  >
+    <svg
+      aria-hidden="true"
+      class="flex-shrink-0 inline w-5 h-5 mr-3"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        fill-rule="evenodd"
+        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+        clip-rule="evenodd"></path></svg
+    >
+    <span class="sr-only">Info</span>
+    <div>
+      Hi there,
+      <a
+        class="text-terminal-green underline underline-offset-2 font-semibold"
+        target="_blank"
+        rel="noopener"
+        href="https://www.linkedin.com/in/a-shubham-verma/">Shubham</a
+      > is a full stack developer with strong problem solving skill!
+    </div>
+  </div>
+  <div
+    class="flex md:flex-row gap-16 items-center flex-col justify-center mt-0 md:mt-6"
+  >
+    <!-- hero description -->
+    <div class="flex-[3] flex flex-col">
+      <h1
+        class="typewrite text-5xl font-bold text-terminal-green md:inline-flex hidden w-fit"
+      >
+        Shubham Verma.
+      </h1>
+      <p class="mt-2 text-center md:text-left">
+        Passionate about solving problems with technology.
+      </p>
+      <ButtonLink
+        label="Resume"
+        link="/Shubham_Verma_Resume.pdf"
+        className={"font-bold mt-4 self-center md:self-start"}
+      />
+    </div>
+
+    <!-- hero image -->
+    <div class="flex-[2]">
+      <Image
+        src="/images/hero.jpg"
+        alt="hero"
+        class="hero-img"
+        width={384 * 2}
+        height={512 * 2}
+      />
+    </div>
+  </div>
+
+  <!-- recent projects -->
+  <div
+    class="mt-8 text-2xl font-bold text-white flex gap-2 items-center justify-between"
+  >
+    <span>
+      Recent
+      <span class="text-terminal-green">Projects</span>
+    </span>
+    <div class="text-sm">
+      <a href="/projects">View all Projects →</a>
+    </div>
+  </div>
+  <div class="mt-4 flex flex-col gap-4">
+    {
+      recent_projects.map((project) => {
+        const { data } = project;
+        return (
+          <div class="flex rounded-md md:items-center border-2 border-terminal-green/50 p-4 flex-col gap-8 md:flex-row items-center hover:-translate-y-1 transition-all ">
+            <div class="flex-[3]">
+              <Image
+                alt={data.image.alt!}
+                src={data.image.src!}
+                width={385}
+                height={190}
+                width={385 * 2}
+                height={190 * 2}
+                class="object-contain rounded-md w-full p-2 shadow-xl"
+              />
+            </div>
+            <div class="flex flex-col flex-[5] justify-center md:items-start items-center gap-x-8 ">
+              <div class="flex gap-2 md:flex-row flex-col items-center flex-wrap">
+                <h2 class="text-xl font-semibold text-center">{data.title}</h2>
+                <div class="flex gap-2 flex-wrap justify-center">
+                  {data.tags.map((tag: string) => {
+                    return (
+                      <span class="rounded-md px-2 py-1 text-xs font-semibold border border-terminal-green items-center flex justify-center shadow-lg whitespace-nowrap">
+                        {tag}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+              <p class="text-gray-400 text-sm mt-3 md:mt-2 inline-flex">
+                {new Date(data.timestamp).toDateString()}
+              </p>
+              <p class="text-gray-200 mt-4">
+                {data.description}
+                <a
+                  class="text-terminal-green underline underline-offset-2"
+                  href={"/projects/" + project.slug}
+                >
+                  Learn more
+                </a>
+              </p>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</Layout>
+
+<style>
+  .typewrite {
+    position: relative;
+  }
+  .typewrite::after {
+    --width: 13px;
+    content: "";
+    width: var(--width);
+    right: calc(var(--width) * -1 - 5px);
+    top: 0;
+    bottom: 0;
+    background-color: #01f53f;
+    position: absolute;
+    animation: blink 900ms steps(2, start) infinite;
+  }
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes about-radius {
+    0% {
+      border-radius: 63% 37% 27% 73% / 66% 47% 53% 34%;
+    }
+    30% {
+      border-radius: 25% 75% 16% 84% / 79% 21% 79% 21%;
+    }
+    60% {
+      border-radius: 34% 66% 57% 43% / 40% 31% 69% 60%;
+    }
+    100% {
+      border-radius: 63% 37% 27% 73% / 66% 47% 53% 34%;
+    }
+  }
+  .hero-img {
+    position: relative;
+    animation: about-radius infinite 4s ease-in-out;
+    box-shadow: 0px 0px 100px #01f53e64;
+  }
+</style>
