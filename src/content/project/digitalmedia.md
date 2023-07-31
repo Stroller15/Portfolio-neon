@@ -1,13 +1,14 @@
 ---
-title: Counter App
+title: Degital Media Template
 tags: [Javascript, React, Css]
 image:
-  src: /images/counter-app.png
+  src: /images/digitalmedia.png
   alt: ""
 timestamp: 2022-07-24
-description: Created a React counter app - simple and interactive. Users can increment, decrement, and reset the counter. It helped me learn React's component-based structure and state management, enhancing my UI development skills.
-codeLink: https://github.com/Stroller15/My-React-Projects/tree/master/counterApp
-demoLink: https://counter-app-shubham.netlify.app/
+description: The digital media landing page is fully responsive, adapting to any screen size or device type using flexible grid layouts, scalable images, and fluid typography. Interactive features function seamlessly across devices, providing a user-friendly experience and easy access to content.
+
+codeLink: https://github.com/Stroller15/Digitalmedia
+demoLink: https://digitalmedia-shubham.netlify.app/
 ---
 
-Created a React counter app - simple and interactive. Users can increment, decrement, and reset the counter. It helped me learn React's component-based structure and state management, enhancing my UI development skills.
+The digital media landing page is fully responsive, adapting to any screen size or device type using flexible grid layouts, scalable images, and fluid typography. Interactive features function seamlessly across devices, providing a user-friendly experience and easy access to content.
