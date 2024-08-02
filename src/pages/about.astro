@@ -1,0 +1,244 @@
+---
+// src/pages/about.astro
+
+export const title = "About Me";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shubham Verma | About Me</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+    />
+    <style>
+        body {
+          font-family: "Space Mono", monospace; /* Updated font-family */
+          margin: 0;
+          padding: 0;
+          background-color: #0d0208; /* Background color */
+          color: #fff;
+        }
+      
+        header {
+          max-width: 1100px; /* Ensure header width */
+          margin: 0 auto;
+        }
+      
+        nav {
+          max-width: 1100px; /* Ensure nav width */
+          margin: 0 auto;
+        }
+      
+        main {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem;
+          max-width: 1100px; /* Maximum width for large devices */
+          margin: 0 auto;
+          width: 100%; /* Ensure it takes full width on smaller screens */
+        }
+      
+        section {
+          background-color: #000;
+          border: 2px solid #00f43f; /* Green border color */
+          border-radius: 10px;
+          padding: 1rem;
+          margin-bottom: 2rem;
+          text-align: center;
+          width: 100%; /* Full width within the main container */
+        }
+      
+        .skills-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      
+        .skills-category {
+          margin-bottom: 2rem;
+        }
+      
+        .skills-category h3 {
+          margin-bottom: 1rem;
+          color: #00f43f; /* Green color for category titles */
+        }
+      
+        .skills-list {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      
+        .skills-list li {
+          margin: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      
+        .skills-list img {
+          width: 24px;
+          height: 24px;
+          margin-right: 0.5rem;
+        }
+      
+        .timeline {
+          position: relative;
+          max-width: 1100px; /* Ensure timeline width */
+          margin: 0 auto;
+          padding: 1rem;
+          list-style-type: none;
+        }
+      
+        .timeline::before {
+          content: '';
+          position: absolute;
+          width: 2px;
+          background-color: #00f43f; /* Green color for the timeline line */
+          top: 0;
+          bottom: 0;
+          left: 20px; /* Adjusted to align with items */
+          margin-left: -1px;
+        }
+      
+        .timeline-item {
+          position: relative;
+          margin-bottom: 2rem;
+          padding-left: 40px; /* Increased padding to make space for the line */
+          text-align: left;
+        }
+      
+        .timeline-item::before {
+          content: ' ';
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          background-color: #00f43f; /* Green color for the timeline dots */
+          border-radius: 50%;
+          left: 10px; /* Adjusted to align with the line */
+          top: 0;
+          margin-top: 8px; /* Center vertically */
+        }
+      
+        .timeline-item h3 {
+          margin: 0;
+          color: #00f43f; /* Green color for job titles */
+        }
+      
+        .timeline-item p {
+          margin: 0.5rem 0;
+        }
+      
+        @media (max-width: 1024px) {
+          main {
+            padding: 1rem;
+            width: auto; /* Adjust width for smaller devices */
+          }
+        }
+      </style>
+      
+  </head>
+  <body>
+    <header>
+      <nav
+        class="lg:max-w-screen-lg text-white flex mx-auto items-end py-4 w-fit md:w-full max-w-screen-sm"
+      >
+        <a href="/" class="md:text-3xl text-2xl text-terminal-green font-bold">
+          Shubham.Verma()
+        </a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2 class="text-2xl font-bold mb-4">About Me</h2>
+        <p class="text-xl text-center mx-auto my-0 leading-relaxed max-w-4xl w-4/5">
+            Hi there! I’m Shubham Verma, a passionate full-stack developer based in India. My journey in technology began with a fascination for how things work behind the scenes. Over the years, I’ve honed my skills in crafting engaging and functional web applications, blending both frontend and backend technologies to bring ideas to life.
+          </p>
+          
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Skills</h2>
+        <div class="skills-content">
+          <div class="skills-category">
+            <h3>Frontend</h3>
+            <p>
+                <a href="https://skillicons.dev">
+                  <img src="https://skillicons.dev/icons?i=html,css,javascript,typescript,react,nextjs,redux,tailwind" />
+                </a>
+              </p>
+          </div>
+          <div class="skills-category">
+            <h3>Backend</h3>
+            <p>
+                <a href="https://skillicons.dev">
+                  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,postgresql,mysql,prisma,graphql,socketio" />
+                </a>
+              </p>
+          </div>
+          <div class="skills-category">
+            <h3>Tools</h3>
+            <p>
+                <a href="https://skillicons.dev">
+                  <img src="https://skillicons.dev/icons?i=git,vscode,linux,postman,nginx,vercel,docker,kubernetes,aws" />
+                </a>
+              </p>
+          </div>
+          <!-- <div class="skills-category">
+            <h3>General</h3>
+            <ul class="skills-list">
+                <p>
+                    <a href="https://skillicons.dev">
+                      <img src="https://skillicons.dev/icons?i=oop" />
+                    </a>
+                  </p>
+          </div> -->
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Experience</h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <h3>Software Engineer Intern at XYZ Company</h3>
+            <p>June 2023 - August 2023</p>
+            <p>Worked on developing and maintaining web applications using modern technologies.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Frontend Intern at ABC Corp</h3>
+            <p>January 2023 - May 2023</p>
+            <p>Contributed to frontend development tasks and assisted with UI/UX improvements.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Backend Intern at DEF Ltd</h3>
+            <p>September 2022 - December 2022</p>
+            <p>Worked on backend services and API development to enhance application functionality.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Full-Stack Intern at GHI Inc</h3>
+            <p>June 2022 - August 2022</p>
+            <p>Involved in full-stack development, including both frontend and backend tasks.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Software Development Intern at JKL Co</h3>
+            <p>January 2022 - May 2022</p>
+            <p>Assisted in software development projects, focusing on code optimization and feature implementation.</p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Education</h2>
+        <ul>
+          <li>Bachelor of Technology in Computer Science</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
