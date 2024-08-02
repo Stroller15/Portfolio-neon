@@ -4,7 +4,7 @@ tags: [React, Javascript, API]
 image:
   src: /images/summify.png
   alt: ""
-timestamp: 2023-05-30
+timestamp: 2024-02-30
 description: Summify is a cutting-edge blog summarizer app using React, API, and Tailwind CSS. Generates concise summaries of lengthy articles using advanced natural language processing. Distills important information effortlessly.
 demoLink: https://summify-neon.vercel.app/
 codeLink: https://github.com/Stroller15/Summify
