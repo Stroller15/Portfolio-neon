@@ -1,9 +1,9 @@
-#  <p align="center">My All Projects</p>
+#  <p align="center">My Portfolio</p>
 Build a centralized application showcase of my working projects with concise descriptions, live demos, and easy navigation.
  </br></br>
-![image](https://github.com/Stroller15/my-all-projects/assets/84174011/99dd6fd9-61f2-48c8-a648-7bb2c9ee4eba)
 
-![image](https://github.com/Stroller15/my-all-projects/assets/84174011/b46ebea3-798a-4156-b3c0-1689b6af86fb)
+<img width="973" alt="portfolio-1" src="https://github.com/user-attachments/assets/8c296b31-d3e9-4717-a9f7-61b578d9842b">
+
 
 ### <p align="center">Tech Used</p>
 
